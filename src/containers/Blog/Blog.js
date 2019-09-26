@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Post from '../../components/Post/Post';
-import FullPost from '../../components/FullPost/FullPost';
-import NewPost from '../../components/NewPost/NewPost';
+import FullPost from '../../containers/Blog/FullPost/FullPost';
+import NewPost from '../../containers/Blog/NewPost/NewPost';
 import './Blog.css';
 import axios from '../../axios';
 
