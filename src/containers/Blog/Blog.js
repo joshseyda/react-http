@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { Route, Link } from 'react-router-dom';
 // import FullPost from '../../containers/Blog/FullPost/FullPost';
-// import NewPost from '../../containers/Blog/NewPost/NewPost';
+import NewPost from './NewPost/NewPost';
 import './Blog.css';
 import Posts from './Posts/Posts';
 
@@ -19,14 +19,19 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/post">Post</a></li>
-                            <li><a href="/new-post">New Post</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to={{
+                                pathname: '/new-post', 
+                                hash: '#submit',
+                                search: '?quick-submit=true'
+                            }}>New Post</Link></li>
                         </ul>
                     </nav>
                 </header>
-                <Route path="/" exact render={() => <h1> Home </h1>} />
-                <Route path="/"  render={() => <h1> Place </h1>} />
+                {/* <Route path="/" exact render={() => <h1> Home </h1>} />
+                <Route path="/"  render={() => <h1> Place </h1>} /> */}
+                <Route path="/" exact component={Posts}/>
+                <Route path="/new-post" component={NewPost} />
             </div>
         );
     }
