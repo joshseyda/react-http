@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
-import FullPost from '../../containers/Blog/FullPost/FullPost';
-import NewPost from '../../containers/Blog/NewPost/NewPost';
+import { Route } from 'react-router';
+// import FullPost from '../../containers/Blog/FullPost/FullPost';
+// import NewPost from '../../containers/Blog/NewPost/NewPost';
 import './Blog.css';
 import Posts from './Posts/Posts';
 
 // import axios from '../../axios';
+
 
 
 
@@ -24,7 +25,7 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <Posts />
+                <Route path="/" render={() => <h1> Home </h1>} />
             </div>
         );
     }
